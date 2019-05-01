@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+  <title>Thêm dự án</title>
+  <link rel="stylesheet" href="./public/css/style-loader.css" />
+  <link href="./public/css/style.css" rel="stylesheet" />
+  <link href="./public/css/custom-style-2.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+</head>
+
+<body class="app is-collapsed">
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+  <script>
+    window.addEventListener("load", function () {
+      var loader = document.getElementById("loader");
+      setTimeout(function () {
+        loader.classList.add("fadeOut");
+      }, 50);
+    });
+  </script>
+  <div class="header-banner">
+    <div class="d-flex h-100 justify-content-between">
+      <img class="header-banner__logo" src="public/images/logo-bnn.png" height="80%" alt="" />
+      <div class="d-flex flex-column justify-content-center pl-2 w-60 header-banner__col-right">
+        <h3 class="text-uppercase text-yellow">
+          Phần mềm quản lý dự án đầu tư
+        </h3>
+        <h1 class="text-uppercase text-white">
+          Tỉnh Hà Tĩnh
+        </h1>
+      </div>
+      <div class="header-banner__right m-auto  justify-content-center pr-5">
+        <!-- <a class="username" href="/index.html">Tài khoản Sở kế hoạch và đầu tư</a> -->
+        <ul class="nav-right d-flex ">
+
+          <li class="dropdown m-auto">
+            <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
+              <!-- <div class="peer mR-10"><img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg"
+                    alt=""></div> -->
+              <div class="peer">
+                <h5 class="m-auto c-white-900">Tài khoản Sở kế hoạch và đầu tư</h5>
+              </div>
+            </a>
+            <ul class="dropdown-menu fsz-sm">
+              <li>
+                <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700 pl-2 pr-2">
+                  <i class="ti-settings mR-10"></i>
+                  <span>Thiết lập tài khoản</span>
+                </a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li><a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700 pl-2 pr-2">
+                  <i class="ti-power-off mR-10"></i>
+                  <span>Đăng xuất</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class="notifications dropdown mt-1 mr-2 ml-3">
+            <span class="counter bgc-red mt-1">3</span>
+            <a href="" class="dropdown-toggle no-after mt-1 btn-dropdown__bell" data-toggle="dropdown"
+              aria-expanded="false">
+              <i class="ti-bell"></i>
+            </a>
+            <ul class="dropdown-menu" id="dropdown-menu">
+              <li class="pX-20 pY-15 bdB"><i class="ti-bell pR-10"></i> <span class="fsz-sm fw-600 c-grey-900">Thông
+                  báo</span></li>
+              <li>
+                <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm ps">
+                  <li>
+                    <a href="" class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100">
+                      <div class="peer peer-greed mR-15">
+                        <span>
+                          <span class="fw-500">MR.A</span>
+                          <span class="c-grey-600">vừa cập nhập nhà đầu tư mới</span>
+                        </span>
+                        <p class="m-0"><small class="fsz-xs">5 phút trước</small></p>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100">
+                      <div class="peer peer-greed mR-15">
+                        <span>
+                          <span class="fw-500">MR.B</span>
+                          <span class="c-grey-600">vừa thêm nhà đầu tư mới</span>
+                        </span>
+                        <p class="m-0"><small class="fsz-xs">5 phút trước</small></p>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100">
+                      <div class="peer peer-greed mR-15">
+                        <span>
+                          <span class="fw-500">MR.C</span>
+                          <span class="c-grey-600">vừa thêm vốn đầu tư dự án A</span>
+                        </span>
+                        <p class="m-0"><small class="fsz-xs">5 phút trước</small></p>
+                      </div>
+                    </a>
+                  </li>
+                  <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+                    <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                  </div>
+                  <div class="ps__rail-y" style="top: 0px; right: 0px;">
+                    <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+                  </div>
+                </ul>
+              </li>
+              <li class="pX-20 pY-15 ta-c bdT">
+                <span>
+                  <a href="" class="c-grey-600 cH-blue fsz-sm td-n">Xem tất cả thông báo<i
+                      class="ti-angle-right fsz-xs mL-10"></i></a>
+                </span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="noi-dung">
+    <div class="sidebar">
+      <div class="sidebar-inner">
+        <div class="sidebar-logo">
+          <div class="peers ai-c fxw-nw">
+            <div class="peer peer-greed">
+              <a class="sidebar-link td-n" href="index.html">
+                <div class="peers ai-c fxw-nw user-login-mobile">
+                  Tài khoản Sở kế hoạch và đầu tư
+                </div>
+              </a>
+            </div>
+            <div class="peer">
+              <div class="mobile-toggle sidebar-toggle">
+                <a href="" class="td-n"><i class="ti-arrow-circle-left"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul class="sidebar-menu scrollable pos-r ps">
+          <li class="nav-item dropdown ">
+            <a class="dropdown-toggle" href="javascript:void(0);"><span class="icon-holder">
+                <!-- <i class="fa fa-file-text" aria-hidden="true"></i>  -->
+                <img src="./public/images/icon-qldm.png" height="27px" alt="" srcset="">
+              </span><span class="title">Quản lý danh mục</span>
+              <span class="arrow"><i class="ti-angle-right"></i></span></a>
+            <ul class="dropdown-menu">
+              <li class="active list-group">
+                <a class="sidebar-link" href="./quan-ly-danh-muc.html">Danh mục quốc gia
+                </a>
+              </li>
+              <li class="nav-item dropdown"><a class="dropdown-toggle" href="javascript:void(0);"><span class="icon-holder"></span> <span class="title">Danh mục địa bàn</span> <span class="arrow"><i class="ti-angle-right"></i></span></a><ul class="dropdown-menu " style="display: none;"><li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục Quận Huyện</a></li><li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục Tỉnh thành phố</a></li></ul></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục loại dự án</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục loại nguồn vốn</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục trạng thái dự án</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục nhóm chỉ tiêu quản lý</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục chỉ tiêu quản lý</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục chủ đầu tư</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục phân loại lĩnh vực</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục nhà đầu tư</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục hình thức đầu tư</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục văn bản giấy tờ</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục loại công trình</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục nhóm dự án</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục cấp phê duyệt</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle" href="javascript:void(0);"><span class="icon-holder">
+                <!-- <i class="fa fa-file-text" aria-hidden="true"></i> -->
+                <img src="./public/images/icon-qlht.svg" height="27px" alt="" srcset="">
+              </span><span class="title">Quản lý hệ thống</span>
+              <span class="arrow"><i class="ti-angle-right"></i></span></a>
+            <ul class="dropdown-menu ">
+              <li class="list-group">
+                <a class="sidebar-link" href="./quan-ly-nhom-nguoi-dung.html">Quản lý nhóm người dùng</a>
+              </li>
+              <li class="list-group">
+                <a class="sidebar-link" href="./quan-ly-nhom-nguoi-dung.html">Quản lý người dùng</a>
+              </li>
+              <li class="list-group">
+                <a class="sidebar-link" href="#">Quản lý tham số hệ thống</a>
+              </li>
+              <li class="list-group">
+                <a class="sidebar-link" href="#">Quản lý nhật ký</a>
+              </li>
+              <li class="list-group">
+                <a class="sidebar-link" href="#">Khôi phục hệ thống</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle" href="javascript:void(0);"><span class="icon-holder">
+                <!-- <i class="fa fa-file-text" aria-hidden="true"></i>  -->
+                <img src="./public/images/icon-tool.png" height="27px" alt="" srcset="">
+              </span><span class="title">Tiện ích</span>
+              <span class="arrow"><i class="ti-angle-right"></i></span></a>
+            <ul class="dropdown-menu ">
+              <li class="list-group">
+                <a class="sidebar-link" href="#">Thông báo/nhắc việc</a>
+              </li>
+              <li class="list-group">
+                <a class="sidebar-link" href="#">Các câu hỏi thường gặp</a>
+              </li>
+              <li class="list-group">
+                <a class="sidebar-link" href="#">Tài liệu hướng dẫn sử dụng</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown open" id="navActive">
+            <a class="dropdown-toggle" href="javascript:void(0);"><span class="icon-holder">
+                <!-- <i class="fa fa-file-text" aria-hidden="true"></i>  -->
+                <img src="./public/images/icon-qlda.png" height="27px" alt="" srcset="">
+              </span><span class="title">Quản lý dự án đầu
+                tư</span>
+              <span class="arrow"><i class="ti-angle-right"></i></span></a>
+            <ul class="dropdown-menu ">
+              <li class="">
+                <a class="sidebar-link" href="./danh-sach-du-an-2.html">Danh sách dự án</a>
+              </li>
+              <li class="">
+                <a class="sidebar-link" href="../tong-muc-dau-tu-2.html">Tổng mức đầu tư</a>
+              </li>
+              <li class="">
+                <a class="sidebar-link" href="./phan-ky-thuc-hien.html">Phân kỳ thực hiện</a>
+              </li>
+              <li class="">
+                <a class="sidebar-link" href="./cap-phep-xay-dung-2.html">V/b cấp phép xây
+                  dựng</a>
+              </li>
+              <li class="">
+                <a class="sidebar-link" href="./giao-va-cho-thue-dat-cac-thong-tin-ve-moi-truong.html">Giao cho thuê đất và các thông tin về môi
+                  trường</a>
+              </li>
+              <li class="">
+                <a class="sidebar-link" href="./van-ban-dinh-kem-2.html">Văn bản giấy tờ đính
+                  kèm</a>
+              </li>
+          </li>
+        </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="dropdown-toggle" href="javascript:void(0);"><span class="icon-holder">
+              <!-- <i class="fa fa-file-text" aria-hidden="true"></i>  -->
+              <img src="./public/images/icon-bc.png" height="27px" alt="" srcset="">
+            </span><span class="title">Báo cáo</span>
+            <span class="arrow"><i class="ti-angle-right"></i></span></a>
+          <ul class="dropdown-menu ">
+            <li class="list-group">
+              <a class="sidebar-link" href="./bao-cao-quan-ly-ngoai-ngan-sach.html">Báo cáo theo quy định</a>
+            </li>
+            <li class="list-group">
+              <a class="sidebar-link" href="./danh-sach-bao-cao-theo-nhu-cau-quan-ly.html">Báo cáo theo nhu cầu quản
+                lý</a>
+            </li>
+            <li class="list-group">
+              <a class="sidebar-link" href="./#">Thống kê số liệu</a>
+            </li>
+          </ul>
+        </li>
+        <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+          <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+        </div>
+        <div class="ps__rail-y" style="top: 0px; right: 0px;">
+          <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+        </div>
+        <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+          <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+        </div>
+        <div class="ps__rail-y" style="top: 0px; right: 0px;">
+          <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+        </div>
+        </ul>
+      </div>
+    </div>
+    <div class="page-container">
+      <div class="header navbar">
+        <div class="header-container">
+          <ul class="nav-left">
+            <li>
+              <a id="sidebar-toggle" class="sidebar-toggle" href="javascript:void(0);"><i class="ti-menu"></i></a>
+            </li>
+            <li class="search-box">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                  <li class="breadcrumb-item active text-longer" aria-current="page">
+                    Thông tin dự án
+                  </li>
+                </ol>
+              </nav>
+            </li>
+          </ul>
+          <ul class="nav-right mr-4">
+            <li class="mt-1 nav--col-right">
+              <div class="form-group m-auto">
+                <div class="dropdown" data-placement="top" data-toggle="tooltip" title=""
+                  data-original-title="Hiển số mục hiển thị">
+                  <a class="" aria-haspopup="true" aria-expanded="true">
+                    <i id="btn-dropdown" class="fa fa-gears btn-dropdown" onclick="onClickDropdown()"
+                      aria-hidden="true"></i>
+                  </a>
+                  <div class="dropdown-cuttom" id="dropdown-cuttom">
+                    <p class="m-auto text-center dropdown-item" href="#">Hiển thị số mục hiển thị</p>
+                    <div class="dropdown-divider"></div>
+                    <select id="slcDropodown" class="form-control slcDropodown">
+                      <option selected="">5</option>
+                      <option>10</option>
+                      <option>15</option>
+                      <option>20</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <main class="main-content">
+        <div id="mainContent">
+          <div class="full-container">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group row">
+                    <label for="maduan" class="col-sm-3 col-form-label text-dark h6">Mã dự án</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="maduan" placeholder="Mã dự án">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="maduan" class="col-sm-3 col-form-label text-dark h6">Tên dự án</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="maduan" placeholder="Tên dự án">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="maduan" class="col-sm-3 col-form-label text-dark h6">Tên chủ đầu tư</label>
+                    <div class="col-sm-9 d-flex">
+                      <select name="" id="" class="form-control mr-2">
+                        <option value="">Chủ đầu tư 01</option>
+                        <option value="">Chủ đầu tư 01</option>
+                        <option value="">Chủ đầu tư 01</option>
+                        <option value="">Chủ đầu tư 01</option>
+                      </select>
+                      <a href="" data-toggle="modal" data-target="#them-moi-chu-dau-tu"
+                        class="btn btn-primary col-sm-1 " title="Thêm mới chủ đầu tư"><i class="fa fa-plus"
+                          aria-hidden="true" data-toggle="tooltip" data-placement="bottom" data-original-title=""
+                          title=""></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="maduan" class="col-sm-3 col-form-label text-dark h6">Địa điểm thực hiện</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="maduan" placeholder="Địa điểm thực hiện">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="maduan" class="col-sm-3 col-form-label text-dark h6">Quận/huyện</label>
+                    <div class="col-sm-4">
+                      <select name="" id="" class="form-control">
+                        <option value="">Hương Sơn</option>
+                        <option value="">Cấp phê duyệt 2</option>
+                      </select>
+                    </div>
+                    <label for="maduan" class="col-sm-1 col-form-label">Tỉnh</label>
+                    <div class="col-sm-4">
+                      <select name="" id="" class="form-control">
+                        <option value="">Hà Tĩnh</option>
+                        <option value="">Cấp phê duyệt 2</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="maduan" class="col-sm-3 col-form-label text-dark h6">Hình thức đầu tư</label>
+                    <div class="col-sm-9">
+                      <select name="" id="" class="form-control">
+                        <option value="">Hinh thức đầu tư 01</option>
+                        <option value="">Hình thức đầu tư 01</option>
+                        <option value="">Hình thức đầu tư 01</option>
+                        <option value="">Hình thức đầu tư 01</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="maduan" class="col-sm-3 col-form-label text-dark h6">Lĩnh vực đầu tư</label>
+                    <div class="col-sm-9">
+                      <select name="" id="" class="form-control">
+                        <option value="">Lĩnh vực đầu tư 01</option>
+                        <option value="">Lĩnh vực đầu tư 01</option>
+                        <option value="">Lĩnh vực đầu tư 01</option>
+                        <option value="">Lĩnh vực đầu tư 01</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group row">
+                    <label for="maduan" class="col-sm-3 col-form-label text-dark h6">Trạng thái dự án</label>
+                    <div class="col-sm-9">
+                      <select name="" id="" class="form-control">
+                        <option value="">Trang thái 1</option>
+                        <option value="">Trang thái 2</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="maduan" class="col-sm-3 col-form-label text-dark h6">Nhóm dự án</label>
+                    <div class="col-sm-9">
+                      <select name="" id="" class="form-control">
+                        <option value="">Nhóm dự án 1</option>
+                        <option value="">Nhóm dự án 2</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="maduan" class="col-sm-3 col-form-label text-dark h6">Cấp phê duyệt</label>
+                    <div class="col-sm-9">
+                      <select name="" id="" class="form-control">
+                        <option value="">Cấp phê duyệt 1</option>
+                        <option value="">Cấp phê duyệt 2</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="maduan" class="col-sm-3 col-form-label text-dark h6">Thời gian thực hiện/hoạt
+                      động</label>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="maduan" placeholder="Đơn vị tính năm">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="maduan" class="col-sm-3 col-form-label text-dark h6">Ngày hiệu lực</label>
+                    <div class="col-sm-9">
+                      <input type="date" class="form-control" id="maduan" placeholder="Ngày hiệu lực">
+                    </div>
+                  </div>
+                  <div class="form-group pt-3 d-flex">
+                    <div class="checkbox checkbox-circle checkbox-info peers ai-c w-50">
+                      <input type="checkbox" id="inputCall2" name="inputCheckboxesCall" class="peer">
+                      <label for="inputCall2" class="peers peer-greed js-sb ai-c"><span class="peer peer-greed">Đã báo
+                          cáo đánh giá giám sát đầu tư</span></label>
+                    </div>
+
+                  </div>
+                  <div class="form-group pt-3 d-flex">
+                    <div class="w-50">
+                      <button type="button" class="btn btn-primary mr-3 w-50 ">
+                        Lưu lại
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- modal them chu dau tu -->
+              <div class="modal fade" id="them-moi-chu-dau-tu" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">
+                        Thêm mới chủ đầu tư
+                      </h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="container-fluid">
+                        <div class="row">
+                          <div class="col-sm-12 col-12">
+                            <form>
+                              <div class="form-group row">
+                                <label for="maduan" class="col-sm-3 col-form-label text-dark h6">Mã chủ đầu tư</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" id="maduan" placeholder="">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="maduan" class="col-sm-3 col-form-label">Tên chủ đầu tư</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" id="maduan" placeholder="">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="maduan" class="col-sm-3 col-form-label">Email</label>
+                                <div class="col-sm-9">
+                                  <input type="email" class="form-control" id="maduan" placeholder="">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="maduan" class="col-sm-3 col-form-label">Số điện thoại</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" id="maduan" placeholder="">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="maduan" class="col-sm-3 col-form-label">Địa chỉ</label>
+                                <div class="col-sm-9">
+                                  <input type="text" class="form-control" id="maduan" placeholder="">
+                                </div>
+                              </div>
+                              <hr class="my-2">
+                              <div class="row">
+                                <div class="col-sm-6 col-6 ">
+                                  <button class="btn btn-primary float-left" type="submit">
+                                    Lưu lại
+                                  </button>
+                                </div>
+                                <div class="col-sm-6 col-6 text-center">
+                                  <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">
+                                    Thoát
+                                  </button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end modal them chu dau tu -->
+              <div class="row">
+                <div class="col-12 p-2 border-table">
+                  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-muc-tieu"
+                        role="tab" aria-controls="pills-muc-tieu" aria-selected="true">Mục tiêu dự án</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-quy-mo-du-an"
+                        role="tab" aria-controls="pills-quy-mo-du-an" aria-selected="false">Quy mô dự án</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="pills-tabContent">
+                    <!-- tab muc tieu -->
+                    <div class="tab-pane fade show active" id="pills-muc-tieu" role="tabpanel"
+                      aria-labelledby="pills-home-tab">
+                      <div class="form-group">
+                        <label for="" class="text-dark h6">Mục tiêu chung</label>
+                        <textarea name="" class="form-control " id="textareaCuttomOne" cols="" rows="3"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="" class="text-dark h6">Mục tiêu cụ thể</label>
+                        <textarea name="" class="form-control " id="textareaCuttomTow" cols="" rows="5"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <div class="checkbox checkbox-circle checkbox-info peers ai-c">
+                          <input type="checkbox" id="inputCall3" name="inputCheckboxesCall" class="peer">
+                          <label for="inputCall3" class="peers peer-greed js-sb ai-c text-dark h6"><span
+                              class="peer peer-greed">Thực
+                              hiện dự án sai mục tiêu</span></label>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end tab muc tieu -->
+                    <!-- tab quy mo du an -->
+                    <div class="tab-pane fade" id="pills-quy-mo-du-an" role="tabpanel"
+                      aria-labelledby="pills-profile-tab">
+                      <div class="form-group">
+                        <label for="" class="text-dark h6">Quy mô dự án</label>
+                        <textarea name="" class="form-control" id="" cols="" rows="3"></textarea>
+                      </div>
+                      <div class="form-group">
+                        <div class="checkbox checkbox-circle checkbox-info peers ai-c">
+                          <input type="checkbox" id="inputCall4" name="inputCheckboxesCall" class="peer">
+                          <label for="inputCall4" class="peers peer-greed js-sb ai-c text-dark h6"><span
+                              class="peer peer-greed">Thực
+                              hiện dự án sai quy mô</span></label>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end tab quy mo du an -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script src="public/js/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="public/js/vendor.js"></script>
+  <script type="text/javascript" src="public/js/bundle.js"></script>
+  <script type="text/javascript" src="./public/js/main.js"></script>
+</body>
+
+</html>

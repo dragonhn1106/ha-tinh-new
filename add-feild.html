@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    .modal-dialog {
+      min-width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <!-- <div class="table-responsive">
+      <table class="table table-bordered order-list-du-an-dau-tu">
+        <thead>
+          <tr>
+            <th rowspan="3" class="center-row-table">Năm</th>
+            <th rowspan="3" class="center-row-table">Tháng</th>
+            <th rowspan="3" class="center-row-table">Mã hạng mục</th>
+            <th rowspan="3" class="center-row-table">Tên hạng mục</th>
+            <th rowspan="3" class="center-row-table">Khối lượng thực hiện</th>
+            <th rowspan="3" class="center-row-table">Thời điểm kết thúc</th>
+            <th rowspan="3" class="center-row-table">Trạng thái</th>
+            <th colspan="4" class="center-row-table">
+              Số lượng lao động thực tế
+            </th>
+            <th rowspan="3" class="center-row-table">Hành động</th>
+          </tr>
+          <tr>
+
+            <th colspan="2">Lao động trong nước</th>
+            <th colspan="2">Lao động nước ngoài</th>
+          </tr>
+          <tr>
+
+            <th>Nam</th>
+            <th>Nữ</th>
+            <th>Nam</th>
+            <th>Nữ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input type="number" placeholder="Năm" class="form-control w-auto" name="nam"
+                class="center-row-table form-control" />
+            </td>
+            <td>
+              <input type="number" placeholder="Tháng" min="1" max="12" name="thang"
+                class="center-row-table form-control w-auto" />
+            </td>
+            <td><input type="text" class="form-control"></td>
+            <td><input type="text" class="form-control"></td>
+            <td><input type="text" class="form-control"></td>
+            <td><input type="date" class="form-control w-auto"></td>
+            <td>
+              <select id="inputState" class="form-control w-auto">
+                <option selected>Chậm tiến độ</option>
+                <option>Đúng tiến độ</option>
+              </select>
+            </td>
+            <td><input type="text" class="form-control"></td>
+            <td><input type="text" class="form-control"></td>
+            <td><input type="text" class="form-control"></td>
+            <td><input type="text" class="form-control"></td>
+            <td class="center-row-table">
+              <a href="javascript:void(0)" class="ibtnDel"><i class="fa fa-trash" aria-hidden="true"
+                  data-toggle="tooltip" data-placement="bottom" title="Xóa"></i></a>&nbsp;
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="12" style="text-align: left;">
+              <input type="button" class="btn btn-lg btn-block " id="addrowCapPhepXayDung" value="Thêm mới" />
+            </td>
+          </tr>
+          <tr>
+          </tr>
+        </tfoot>
+      </table>
+    </div> -->
+    <div class="table-responsive">
+      <table class="table table-bordered order-list-du-an-dau-tu">
+        <thead>
+          <tr>
+            <th scope="col">STT</th>
+            <th scope="col">Mã dự án</th>
+            <th scope="col">Tiêu đề</th>
+            <th scope="col">Hành động</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>MDA001</td>
+            <td>DA0001-Dự án xây dưng ABC -QĐ: ABC</td>
+            <td class="center-row-table">
+              <a href="javascript:void(0)" class="ibtnDel"><i class="fa fa-trash" aria-hidden="true"
+                  data-toggle="tooltip" data-placement="bottom" title="Xóa"></i></a>&nbsp;
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="12" style="text-align: left;">
+              <input type="button" class="btn btn-lg btn-block " id="addrowDuAnDauTu" value="Thêm mới" />
+            </td>
+          </tr>
+          <tr>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+</body>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+<script>
+  //du an dau tu
+  $(document).ready(function () {
+    var counter = 0;
+    $("#addrowDuAnDauTu").on("click", function () {
+      var newRow = $("<tr>");
+      var cols = "";
+      cols += '<td><input type="text" class="form-control" /></td>';
+      cols += '<td><input type="text" class="form-control w-100"/></td>';
+      cols += '<td><input type="text" class="form-control" /></td>';
+      cols +=
+        '<td class="text-center"><a href="javascript:void(0)" class="ibtnDel"><i class="fa fa-trash" aria-hidden="true" data-toggle="tooltip" data-placement="bottom"title="Xóa"></i></a>&nbsp;</td>';
+      newRow.append(cols);
+      $("table.order-list-du-an-dau-tu").append(newRow);
+      counter++;
+    });
+    $("table.order-list-du-an-dau-tu").on("click", ".ibtnDel", function (event) {
+      $(this).closest("tr").remove();
+      counter -= 1
+    });
+  });
+</script>
+
+</body>
+
+</html>

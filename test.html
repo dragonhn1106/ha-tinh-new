@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+  <style>
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    nav ul li {
+      list-style: none;
+      float: left;
+      padding-right: 20px;
+    }
+
+    li a {
+      text-decoration: none;
+      color: #222;
+      background-color: #ccc;
+      padding: 4px 5px;
+    }
+
+    .active {
+      background-color: #d90000;
+      color: #fff;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- <nav class="navecation">
+      <ul id="navi">
+        <li><a class="menu active" href="#">About </a></li>
+        <li><a class="menu" href="#">Contact </a></li>
+        <li><a class="menu" href="#">Services</a></li>
+        <li><a class="menu" href="#">Contact Us</a></li>
+        <li><a class="menu" href="http://www.mywebtricks.com/2014/03/add-active-class-to-navigation-menu.html">Read Our
+            Blog</a></li>
+      </ul>
+    </nav> -->
+
+    <li><a href="active.html">active</a></li>
+    <li><a href="active2.html">Active2</a></li>
+    <li><a href="active3.html">Active3</a></li>
+    <!-- end modal xem chi tiết cho thuê đất và các thông tin về môi trường -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script>
+      jQuery(function ($) {
+        $("ul a")
+          .click(function (e) {
+            var link = $(this);
+
+            var item = link.parent("li");
+
+            if (item.hasClass("active")) {
+              item.removeClass("active").children("a").removeClass("active");
+            } else {
+              item.addClass("active").children("a").addClass("active");
+            }
+
+            if (item.children("ul").length > 0) {
+              var href = link.attr("href");
+              link.attr("href", "#");
+              setTimeout(function () {
+                link.attr("href", href);
+              }, 300);
+              e.preventDefault();
+            }
+          })
+          .each(function () {
+            var link = $(this);
+            if (link.get(0).href === location.href) {
+              link.addClass("active").parents("li").addClass("active");
+              return false;
+            }
+          });
+      });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,495 @@
+:root {
+  --banner-height: 100px;
+}
+
+.text-longer {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  max-width: 370px;
+}
+
+.header-banner {
+  height: 100px;
+  /* overflow: hidden; */
+  background-color: #4267b2;
+  position: fixed;
+  margin-top: -100px;
+  width: 100%;
+  z-index: 999;
+}
+
+.header-banner h1 {
+  line-height: 70%;
+  font-size: 2rem;
+}
+
+.header-banner h3 {
+  font-size: 1.2rem;
+}
+
+.sidebar {
+  top: 100px !important;
+  background-color: #f7f5f5 !important;
+}
+
+.page-container {
+  margin-top: 100px;
+}
+
+.header-banner__logo {
+  height: 100% !important;
+  margin-left: 3rem;
+}
+
+.header-banner__col-right {
+  width: 70% !important;
+}
+
+.text-yellow {
+  color: yellow;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.header-banner__right {
+  display: flex
+}
+
+.header-banner__right a:hover {
+  color: #969605;
+}
+
+.full-container {
+  top: calc(50px + 100px) !important;
+  padding: 10px 0px 0 60px;
+}
+
+.nav-left {
+  position: relative;
+}
+
+
+
+.nav-left .breadcrumb {
+  background-color: #fff !important;
+  /* / margin-top: 10px;/  */
+  height: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.header .header-container .nav-left>li>a {
+  line-height: 53px !important;
+}
+
+.header .header-container {
+  height: 45px !important;
+}
+
+.header.navbar {
+  height: 45px;
+}
+
+textarea.form-control.input-show-text-tab {
+  height: 200px;
+  background: #fff;
+}
+
+.border-table {
+  border: 1px solid #ddd
+}
+
+.w-60 {
+  width: 60% !important;
+}
+
+thead {
+  background-color: #4267b2;
+  color: #fff;
+}
+
+#pills-tab {
+  background-color: #4267b2;
+}
+
+#pills-tab a {
+  color: #fff;
+}
+
+#pills-tab .nav-item {
+  border: 1px solid #d4c3c3;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+  background-color: #4c545a !important;
+}
+
+.sidebar-inner .sidebar-logo {
+  display: none !important;
+}
+
+.cham-tien-do,
+.nguyen-nhan-khac {
+  display: none;
+}
+
+#tim-kiem-nang-cao {
+  display: none;
+}
+
+
+.btnTimKiemNangCao {
+  float: right;
+  color: white !important;
+  font-size: 15px !important;
+  line-height: 2.5;
+}
+
+label.peers.peer-greed.js-sb.ai-c:before {
+  border-radius: 50%;
+  border: 1px solid !important;
+}
+
+
+.form-control::-webkit-input-placeholder {
+  color: black !important;
+  font-size: 14px;
+}
+
+/* WebKit, Blink, Edge */
+.form-control:-moz-placeholder {
+  color: black !important;
+  font-size: 14px;
+}
+
+/* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder {
+  color: black !important;
+  font-size: 14px;
+}
+
+/* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder {
+  color: black !important;
+  font-size: 14px;
+}
+
+/* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder {
+  color: black !important;
+  font-size: 14px;
+}
+
+.sidebar-menu>li.dropdown ul.dropdown-menu>li.active a {
+  font-weight: 600;
+  color: blue !important;
+}
+
+.text-table-longer {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  overflow: hidden;
+}
+
+.dropdown-cuttom {
+  position: absolute;
+  background-color: #ffffff;
+  padding: 10px;
+  border: 1px solid #a7a7a7a6;
+  border-radius: 4px;
+  right: 104%;
+  top: -10%;
+  display: none;
+}
+
+
+.dropdown-cuttom.show {
+  display: block !important
+}
+
+.btn-dropdown {
+  position: relative;
+}
+
+.header .header-container .nav-right>li>a {
+  line-height: 45px !important;
+  min-height: 45px !important;
+}
+
+.header .header-container .nav-left .notifications .counter,
+.header .header-container .nav-right .notifications .counter {
+  background-color: #ff3c7e;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 10px;
+  line-height: 1;
+  padding: 3px 5.5px;
+  position: absolute;
+  right: 6px !important;
+  top: 3px !important;
+}
+
+.nav--col-right {
+  padding: 0 0 0 10px;
+  font-size: 17px;
+}
+
+.nav--col-right #btn-dropdown {
+  font-size: 17px;
+  line-height: 40px !important;
+}
+
+/* bell header-banner__right*/
+.nav-right {
+  list-style-type: none;
+  margin-right: 30px;
+}
+
+#dropdown-menu {
+  position: absolute;
+  will-change: transform;
+  min-width: 286px;
+  top: 0px;
+  left: 0px;
+  transform: translate3d(-262px, 26px, 0px) !important;
+}
+
+.btn-dropdown__bell {
+  font-size: 17px;
+  color: white !important;
+  font-weight: 700
+}
+
+.btn-dropdown__bell:hover {
+  color: white !important;
+}
+
+.bgc-red {
+  background-color: #ff3c7e;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 10px;
+  line-height: 1;
+  padding: 3px 5.5px;
+  position: absolute;
+  right: -5px;
+  top: -10px;
+}
+
+.c-white-900,
+.c-white-900:hover {
+  color: #fff !important;
+}
+
+.dropdown-menu.fsz-sm {
+  min-width: 270px;
+}
+
+.center-row-table {
+  text-align: center;
+  vertical-align: middle !important;
+}
+
+/* phan ky thuc hien */
+.modal-dialog {
+  min-width: 100% !important;
+}
+
+/* #themMoiPhanKyThucHien .modal-dialog {
+  max-width: calc(100vh - -70%);
+} */
+
+#them-moi-phan-ky-du-an {
+  padding-right: 0px !important;
+}
+
+#exampleModal {
+  padding-right: 0px !important;
+}
+
+#exampleModal .modal-dialog {
+  min-width: 100% !important;
+}
+
+#them-moi-quan-ly-danh-muc {
+  padding-right: 0px !important;
+}
+
+.nav-right {
+  margin-right: 4rem;
+}
+
+.btnThemMoiMobile {
+  display: none
+}
+
+.btnThemMoiDesktop {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .header-banner__right {
+    display: none
+  }
+
+  .btnThemMoiDesktop {
+    display: none;
+  }
+
+  .btnThemMoiMobile {
+    display: block;
+  }
+
+  .show-number-records {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  /* / header / */
+
+
+  .header-banner__right.d-flex.flex-column {
+    display: none !important;
+  }
+
+  .header-banner__logo {
+    margin-left: 0rem;
+  }
+
+  .header-banner__col-right {
+    height: 100% !important;
+    width: 75% !important;
+  }
+
+  .header-banner__col-right h3,
+  .header-banner__col-right h1 {
+    text-align: center
+  }
+
+  .sidebar-inner .sidebar-logo {
+    display: block !important;
+  }
+
+  .user-login-mobile {
+    font-size: 12px;
+  }
+
+  .nav-left .breadcrumb {
+    font-size: 10px;
+    line-height: 2.5;
+    text-align: center;
+  }
+
+  .breadcrumb-item.breadcrumb-item {
+    padding-left: 2px;
+  }
+
+  .breadcrumb-item+.breadcrumb-item:before {
+
+    padding-right: 2px;
+
+  }
+
+  #pills-tab .nav-item {
+    width: 50%;
+  }
+
+  .sidebar-menu>li>a .icon-holder {
+    margin-right: 0px;
+  }
+
+  .text-longer {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    max-width: 100px;
+  }
+
+  .header .header-container .nav-left>li>a,
+  .header .header-container .nav-right>li>a {
+    padding: 0 5px !important;
+  }
+
+  /* reponsive mobile new */
+
+
+  .full-container {
+    padding: 10px;
+  }
+
+  .btnTimKiemNangCao {
+    width: 100%;
+    line-height: 3.5;
+  }
+
+  #slc_right {
+    margin: 3% 0 0%;
+  }
+
+  .pagination.justify-content-end {
+    justify-content: center !important;
+  }
+
+  .nav--user {
+    display: none
+  }
+
+  .nav--col-right {
+    padding: 0 2px 0 0px !important;
+    font-size: 17px;
+  }
+
+  .nav-right {
+    margin-right: 0px !important;
+  }
+
+  .header .header-container .nav-right .notifications {
+    display: none;
+  }
+
+  .index-btn-search {
+    margin: auto
+  }
+}
+
+.fa.fa-gears.btn-dropdown {
+  cursor: pointer;
+}
+
+/* fix tren ie 11 */
+@media screen and (-ms-high-contrast: active),
+screen and (-ms-high-contrast: none) {
+  .header-banner {
+    margin-top: 0px;
+  }
+
+  a.dropdown-toggle.no-after.peers.fxw-nw.ai-c.lh-1 {
+    height: 100%;
+  }
+
+  .dropdown-cuttom {
+    position: absolute;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid rgba(166, 166, 166, 0.6509803921568628);
+    border-radius: 4px;
+    right: 104%;
+    top: -10%;
+    display: none;
+  }
+
+  .notifications.dropdown.mt-1.mr-2.ml-3 {
+    margin-top: 13% !important
+  }
+
+  .dropdown-menu.fsz-sm.show {
+    transform: translate3d(0px, 70%, 0px) !important;
+  }
+}

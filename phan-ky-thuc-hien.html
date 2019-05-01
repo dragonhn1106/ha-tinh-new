@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=11">
+  <title>Phân kỳ thực hiện</title>
+  <link rel="stylesheet" href="./public/css/style-loader.css" />
+  <link href="public/css/style.css" rel="stylesheet" />
+  <link href="public/css/custom-style-2.css" rel="stylesheet" />
+  <link href="public/css/custom-style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./node_modules/select2-bootstrap-theme/dist/select2-bootstrap.css">
+</head>
+
+<body class="app is-collapsed">
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+  <script>
+    window.addEventListener("load", function () {
+      var loader = document.getElementById("loader");
+      setTimeout(function () {
+        loader.classList.add("fadeOut");
+      }, 50);
+    });
+  </script>
+  <div class="header-banner">
+    <div class="d-flex h-100 justify-content-between">
+      <img class="header-banner__logo" src="public/images/logo-bnn.png" height="80%" alt="" />
+      <div class="d-flex flex-column justify-content-center pl-2 w-60 header-banner__col-right">
+        <h3 class="text-uppercase text-yellow">
+          Phần mềm quản lý dự án đầu tư
+        </h3>
+        <h1 class="text-uppercase text-white">
+          Tỉnh Hà Tĩnh
+        </h1>
+      </div>
+      <div class="header-banner__right m-auto  justify-content-center pr-5">
+        <ul class="nav-right d-flex ">
+          <li class="dropdown m-auto">
+            <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
+              <div class="peer">
+                <h5 class="m-auto c-white-900">Tài khoản Sở kế hoạch và đầu tư</h5>
+              </div>
+            </a>
+            <ul class="dropdown-menu fsz-sm">
+              <li>
+                <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700 pl-2 pr-2">
+                  <i class="ti-settings mR-10"></i>
+                  <span>Thiết lập tài khoản</span>
+                </a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li><a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700 pl-2 pr-2">
+                  <i class="ti-power-off mR-10"></i>
+                  <span>Đăng xuất</span></a>
+              </li>
+            </ul>
+          </li>
+          <li class="notifications dropdown mt-1 mr-2 ml-3">
+            <div>
+              <span class="counter bgc-red mt-1">3</span>
+              <a href="" class="dropdown-toggle no-after mt-1 btn-dropdown__bell" data-toggle="dropdown"
+                aria-expanded="false">
+                <i class="ti-bell"></i>
+              </a>
+            </div>
+            <ul class="dropdown-menu" id="dropdown-menu">
+              <li class="pX-20 pY-15 bdB"><i class="ti-bell pR-10"></i> <span class="fsz-sm fw-600 c-grey-900">Thông
+                  báo</span></li>
+              <li>
+                <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm ps">
+                  <li>
+                    <a href="" class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100">
+                      <div class="peer peer-greed mR-15">
+                        <span>
+                          <span class="fw-500">MR.A</span>
+                          <span class="c-grey-600">vừa cập nhập nhà đầu tư mới</span>
+                        </span>
+                        <p class="m-0"><small class="fsz-xs">5 phút trước</small></p>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100">
+                      <div class="peer peer-greed mR-15">
+                        <span>
+                          <span class="fw-500">MR.B</span>
+                          <span class="c-grey-600">vừa thêm nhà đầu tư mới</span>
+                        </span>
+                        <p class="m-0"><small class="fsz-xs">5 phút trước</small></p>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100">
+                      <div class="peer peer-greed mR-15">
+                        <span>
+                          <span class="fw-500">MR.C</span>
+                          <span class="c-grey-600">vừa thêm vốn đầu tư dự án A</span>
+                        </span>
+                        <p class="m-0"><small class="fsz-xs">5 phút trước</small></p>
+                      </div>
+                    </a>
+                  </li>
+                  <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+                    <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                  </div>
+                  <div class="ps__rail-y" style="top: 0px; right: 0px;">
+                    <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+                  </div>
+                </ul>
+              </li>
+              <li class="pX-20 pY-15 ta-c bdT">
+                <span>
+                  <a href="" class="c-grey-600 cH-blue fsz-sm td-n">Xem tất cả thông báo<i
+                      class="ti-angle-right fsz-xs mL-10"></i></a>
+                </span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="noi-dung">
+    <div class="sidebar">
+      <div class="sidebar-inner">
+        <div class="sidebar-logo">
+          <div class="peers ai-c fxw-nw">
+            <div class="peer peer-greed">
+              <a class="sidebar-link td-n" href="index.html">
+                <div class="peers ai-c fxw-nw user-login-mobile">
+                  Tài khoản Sở kế hoạch và đầu tư
+                </div>
+              </a>
+            </div>
+            <div class="peer">
+              <div class="mobile-toggle sidebar-toggle">
+                <a href="" class="td-n"><i class="ti-arrow-circle-left"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul class="sidebar-menu scrollable pos-r ps">
+          <li class="nav-item dropdown ">
+            <a class="dropdown-toggle" href="javascript:void(0);"><span class="icon-holder">
+                <!-- <i class="fa fa-file-text" aria-hidden="true"></i>  -->
+                <img src="./public/images/icon-qldm.png" height="27px" alt="" srcset="">
+              </span><span class="title">Quản lý danh mục</span>
+              <span class="arrow"><i class="ti-angle-right"></i></span></a>
+            <ul class="dropdown-menu">
+              <li class="active list-group">
+                <a class="sidebar-link" href="./quan-ly-danh-muc.html">Danh mục quốc gia
+                </a>
+              </li>
+              <li class="nav-item dropdown"><a class="dropdown-toggle" href="javascript:void(0);"><span
+                    class="icon-holder"></span> <span class="title">Danh mục địa bàn</span> <span class="arrow"><i
+                      class="ti-angle-right"></i></span></a>
+                <ul class="dropdown-menu " style="display: none;">
+                  <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục Quận Huyện</a></li>
+                  <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục Tỉnh thành phố</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục loại dự án</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục loại nguồn vốn</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục trạng thái dự án</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục nhóm chỉ tiêu quản lý</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục chỉ tiêu quản lý</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục chủ đầu tư</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục phân loại lĩnh vực</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục nhà đầu tư</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục hình thức đầu tư</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục văn bản giấy tờ</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục loại công trình</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục nhóm dự án</a></li>
+              <li class="nav-item dropdown"><a class="sidebar-link" href="#">Danh mục cấp phê duyệt</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle" href="javascript:void(0);"><span class="icon-holder">
+                <!-- <i class="fa fa-file-text" aria-hidden="true"></i> -->
+                <img src="./public/images/icon-qlht.svg" height="27px" alt="" srcset="">
+              </span><span class="title">Quản lý hệ thống</span>
+              <span class="arrow"><i class="ti-angle-right"></i></span></a>
+            <ul class="dropdown-menu ">
+              <li class="list-group">
+                <a class="sidebar-link" href="./quan-ly-nhom-nguoi-dung.html">Quản lý nhóm người dùng</a>
+              </li>
+              <li class="list-group">
+                <a class="sidebar-link" href="./quan-ly-nhom-nguoi-dung.html">Quản lý người dùng</a>
+              </li>
+              <li class="list-group">
+                <a class="sidebar-link" href="#">Quản lý tham số hệ thống</a>
+              </li>
+              <li class="list-group">
+                <a class="sidebar-link" href="#">Quản lý nhật ký</a>
+              </li>
+              <li class="list-group">
+                <a class="sidebar-link" href="#">Khôi phục hệ thống</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle" href="javascript:void(0);"><span class="icon-holder">
+                <!-- <i class="fa fa-file-text" aria-hidden="true"></i>  -->
+                <img src="./public/images/icon-tool.png" height="27px" alt="" srcset="">
+              </span><span class="title">Tiện ích</span>
+              <span class="arrow"><i class="ti-angle-right"></i></span></a>
+            <ul class="dropdown-menu ">
+              <li class="list-group">
+                <a class="sidebar-link" href="#">Thông báo/nhắc việc</a>
+              </li>
+              <li class="list-group">
+                <a class="sidebar-link" href="#">Các câu hỏi thường gặp</a>
+              </li>
+              <li class="list-group">
+                <a class="sidebar-link" href="#">Tài liệu hướng dẫn sử dụng</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown open" id="navActive">
+            <a class="dropdown-toggle" href="javascript:void(0);"><span class="icon-holder">
+                <!-- <i class="fa fa-file-text" aria-hidden="true"></i>  -->
+                <img src="./public/images/icon-qlda.png" height="27px" alt="" srcset="">
+              </span><span class="title">Quản lý dự án đầu
+                tư</span>
+              <span class="arrow"><i class="ti-angle-right"></i></span></a>
+            <ul class="dropdown-menu ">
+              <li class="">
+                <a class="sidebar-link" href="./danh-sach-du-an-2.html">Danh sách dự án</a>
+              </li>
+              <li class="">
+                <a class="sidebar-link" href="../tong-muc-dau-tu-2.html">Tổng mức đầu tư</a>
+              </li>
+              <li class="">
+                <a class="sidebar-link" href="./phan-ky-thuc-hien.html">Phân kỳ thực hiện</a>
+              </li>
+              <li class="">
+                <a class="sidebar-link" href="./cap-phep-xay-dung-2.html">V/b cấp phép xây
+                  dựng</a>
+              </li>
+              <li class="">
+                <a class="sidebar-link" href="./giao-va-cho-thue-dat-cac-thong-tin-ve-moi-truong.html">Giao cho thuê đất
+                  và các thông tin về môi
+                  trường</a>
+              </li>
+              <li class="">
+                <a class="sidebar-link" href="./van-ban-dinh-kem-2.html">Văn bản giấy tờ đính
+                  kèm</a>
+              </li>
+          </li>
+        </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="dropdown-toggle" href="javascript:void(0);"><span class="icon-holder">
+              <!-- <i class="fa fa-file-text" aria-hidden="true"></i>  -->
+              <img src="./public/images/icon-bc.png" height="27px" alt="" srcset="">
+            </span><span class="title">Báo cáo</span>
+            <span class="arrow"><i class="ti-angle-right"></i></span></a>
+          <ul class="dropdown-menu ">
+            <li class="list-group">
+              <a class="sidebar-link" href="./bao-cao-quan-ly-ngoai-ngan-sach.html">Báo cáo theo quy định</a>
+            </li>
+            <li class="list-group">
+              <a class="sidebar-link" href="./danh-sach-bao-cao-theo-nhu-cau-quan-ly.html">Báo cáo theo nhu cầu quản
+                lý</a>
+            </li>
+            <li class="list-group">
+              <a class="sidebar-link" href="./#">Thống kê số liệu</a>
+            </li>
+          </ul>
+        </li>
+        <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+          <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+        </div>
+        <div class="ps__rail-y" style="top: 0px; right: 0px;">
+          <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+        </div>
+        <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+          <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+        </div>
+        <div class="ps__rail-y" style="top: 0px; right: 0px;">
+          <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div>
+        </div>
+        </ul>
+      </div>
+    </div>
+    <div class="page-container">
+      <div class="header navbar">
+        <div class="header-container">
+          <ul class="nav-left ">
+            <li>
+              <a id="sidebar-toggle" class="sidebar-toggle" href="javascript:void(0);"><i class="ti-menu"></i></a>
+            </li>
+            <li class="search-box">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                  <li class="breadcrumb-item active text-longer" aria-current="page">
+                    Danh sách dự án
+                  </li>
+                  <li class="breadcrumb-item active text-longer" aria-current="page">
+                    Danh sách dự án đầu tư
+                  </li>
+                </ol>
+              </nav>
+            </li>
+          </ul>
+          <ul class="nav-right">
+            <li class="mt-1 nav--col-right">
+              <div class="form-group m-auto">
+                <div class="dropdown" data-placement="top" data-toggle="tooltip" title=""
+                  data-original-title="Hiển số mục hiển thị">
+                  <a class="" aria-haspopup="true" aria-expanded="true">
+                    <i id="btn-dropdown" class="fa fa-gears btn-dropdown" onclick="onClickDropdown()"
+                      aria-hidden="true"></i>
+                  </a>
+                  <div class="dropdown-cuttom" id="dropdown-cuttom">
+                    <p class="m-auto text-center dropdown-item" href="#">Hiển thị số mục hiển thị</p>
+                    <div class="dropdown-divider"></div>
+                    <select id="slcDropodown" class="form-control slcDropodown">
+                      <option selected="">5</option>
+                      <option>10</option>
+                      <option>15</option>
+                      <option>20</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <main class="main-content">
+        <div id="mainContent">
+          <div class="full-container">
+            <div class="container-fluid">
+
+              <form class="mb-4">
+                <div class=" form-row " id="tim-kiem-co-ban">
+                  <div class="col-sm-8 col-12 ">
+                    <div class="form-group row m-auto">
+                      <div class="form-group col-sm-2 col-2 btnThemMoiDesktop m-auto">
+                        <a class="btn btn-primary btn-add-mb m-auto" data-toggle="modal"
+                          data-target="#them-moi-phan-ky-du-an" onclick="onAddIdDefault()" href="javascript:void(0);"><i
+                            class="fa fa-plus" aria-hidden="true"></i> Thêm mới</a>
+                      </div>
+                      <div class="form-group m-auto col-2 text-center col-2 btnThemMoiMobile" data-toggle="modal"
+                        data-target="#them-moi-phan-ky-du-an">
+                        <a class="btn btn-primary " href="javascript:void(0)">
+                          <i class="fa fa-plus" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                      <div class="col-sm-10 col-10 m-auto" id="sidebar-search">
+                        <div class="input-group">
+                          <input type="search" class="form-control"
+                            placeholder="Nhập từ khóa tìm kiếm theo tên quốc gia" aria-label="Recipient's username"
+                            aria-describedby="basic-addon2" id="txtSearch">
+                          <div class="input-group-append">
+                            <button class="btn btn-primary" type="button" onclick="TraCuu()">Tìm kiếm</button>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+              </form>
+              <!-- Modal  thêm mới phân kỳ dự án-->
+              <div class="modal fade" id="them-moi-phan-ky-du-an" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+
+                      <div class="container-fluid mb-3 mt-3">
+                        <div class="row">
+                          <div class="col-md-2">
+                            <h5 class="modal-title" id="exampleModalLabel">Thêm mới phân kỳ dự án</h5>
+                          </div>
+                          <div class="col-md-8">
+                            <div class="form-row">
+                              <div class="col-md-8 m-auto">
+                                <div class="form-group row m-auto">
+                                  <select class="js-example-basic-single form-control" name="state" pe>
+                                    <option value="AL" selected>Mã dự án</option>
+                                    <option value="AL">Bạn anh Thắng</option>
+                                    <option value="WY">Bạn anh Giang</option>
+                                    <option value="WY">Bạn anh Back</option>
+                                    <option value="WY">Bạn anh Vũ</option>
+                                    <option value="WY">Bạn anh Dương</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="container-fluid">
+                        <div class="row">
+                          <div class="tab-pane w-100" id="pills-phan-ky-thuc-hien" role="tabpanel"
+                            aria-labelledby="pills-contact-tab">
+                            <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                              <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#ke-hoach-bo-tri-von"
+                                  role="tab" aria-controls="home" aria-selected="true"
+                                  onclick="onAddIdBtnKeHoachBoTriVon()">Kế hoạch bố trí vốn</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#khoi-luong-thuc-hien"
+                                  role="tab" aria-controls="profile" aria-selected="false"
+                                  onclick="onAddIdBtnKhoiLuongThucHien()">Khối lượng thực hiện</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#giai-ngan-von" role="tab"
+                                  aria-controls="contact" aria-selected="false" onclick="onAddIdBtnGiaiNganVon()">Giải
+                                  ngân vốn</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#khoi-luong-thuc-te"
+                                  role="tab" aria-controls="contact" aria-selected="false"
+                                  onclick="onAddIdBtnKhoiLuongThucHienThucTe()">Khối lượng thực hiện thực
+                                  tế</a>
+                              </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                              <!-- ke hoach bo tri von -->
+                              <div class="tab-pane fade show active" id="ke-hoach-bo-tri-von" role="tabpanel"
+                                aria-labelledby="home-tab">
+                                <div class="table-responsive">
+                                  <table id="myTable" class="table table-bordered order-list">
+                                    <thead>
+                                      <tr>
+                                        <th rowspan="2" class="center-row-table">Năm</th>
+                                        <th rowspan="2" class="center-row-table">Tháng</th>
+                                        <th colspan="2" class="text-center">Vốn trong nước</th>
+                                        <th colspan="2" class="text-center">Vốn nước ngoài</th>
+                                        <th rowspan="2" class="center-row-table">Tổng số</th>
+                                        <th rowspan="2" class="center-row-table">Số QĐ</th>
+                                        <th rowspan="2" class="center-row-table">Ngày QĐ</th>
+                                        <th rowspan="2" class="center-row-table">Ghi chú</th>
+                                        <th rowspan="2" class="center-row-table">Hành động</th>
+                                      </tr>
+                                      <tr>
+                                        <th>Ngân sách</th>
+                                        <th>Khác</th>
+                                        <th>ODA</th>
+                                        <th>Khác</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td><input type="number" placeholder="Năm" class="form-control date" name="nam"
+                                            class="text-center" required />
+                                        </td>
+                                        <td><input type="number" placeholder="Tháng" min="1" max="12" name="thang"
+                                            class="text-center form-control w-auto" required />
+                                        </td>
+                                        <td><input type="text" class="form-control"></td>
+                                        <td><input type="text" class="form-control"></td>
+                                        <td><input type="text" class="form-control"></td>
+                                        <td><input type="text" class="form-control"></td>
+                                        <td><input type="text" class="form-control"></td>
+                                        <td><input type="text" class="form-control"></td>
+                                        <td><input type="date" class="form-control w-auto"></td>
+                                        <td><input type="text" class="form-control w-auto"></td>
+                                        <td class="text-center">
+                                          <a href="javascript:void(0)" class="ibtnDel"><i class="fa fa-trash"
+                                              aria-hidden="true" data-toggle="tooltip" data-placement="bottom"
+                                              title="Xóa"></i></a>&nbsp;
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                    <tfoot>
+                                      <tr>
+                                        <td colspan="10">
+                                        </td>
+                                        <td colspan="1" style="text-align: center;">
+                                          <button type="button" class="btn btn-primary" id="addrow"><i
+                                              class="fa fa-plus" aria-hidden="true"></i></button>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                      </tr>
+                                    </tfoot>
+                                  </table>
+                                </div>
+                              </div>
+                              <!-- end ke hoach bo tri von -->
+
+                              <!-- khoi luong thuc hien -->
+                              <div class="tab-pane fade" id="khoi-luong-thuc-hien" role="tabpanel"
+                                aria-labelledby="profile-tab">
+                                <div class="table-responsive">
+                                  <table id="myTable" class="table table-bordered order-list-khoi-luong-thuc-hien">
+                                    <thead>
+                                      <tr>
+                                        <th class="center-row-table" rowspan="3">Năm</th>
+                                        <th class="center-row-table" rowspan="3">Tháng</th>
+                                        <th class="center-row-table" rowspan="3">Mã hạng mục</th>
+                                        <th class="center-row-table" rowspan="3">Tên hạng mục</th>
+                                        <th class="center-row-table" rowspan="3">
+                                          Khối lượng dự kiến thực hiện
+                                        </th>
+                                        <th class="center-row-table" colspan="4">
+                                          Số lượng lao động dự kiến
+                                        </th>
+                                        <th class="center-row-table" rowspan="3">Hành động</th>
+
+                                      </tr>
+                                      <tr>
+                                        <th class="center-row-table" colspan="2">Lao động trong nước</th>
+                                        <th class="center-row-table" colspan="2">Lao động nước ngoài</th>
+                                      </tr>
+                                      <tr>
+                                        <th class="center-row-table">Nam</th>
+                                        <th class="center-row-table">Nữ</th>
+                                        <th class="center-row-table">Nam</th>
+                                        <th class="center-row-table">Nữ</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>
+                                          <input type="number" placeholder="Số năm" class="form-control" name="nam"
+                                            class="text-center" />
+                                        </td>
+                                        <td>
+                                          <input type="number" placeholder="Tháng" min="1" max="12" name="thang"
+                                            class="text-center form-control w-auto" />
+                                        </td>
+                                        <td>
+                                          <input type="text" class="form-control" name="maHangMuc"
+                                            class="text-center" />
+                                        </td>
+                                        <td>
+                                          <input type="text" class="form-control" name="" class="text-center" />
+                                        </td>
+                                        <td>
+                                          <input type="text" class="form-control" name="maHangMuc"
+                                            class="text-center" />
+                                        </td>
+                                        <td>
+                                          <input type="text" class="form-control" name="maHangMuc"
+                                            class="text-center" />
+                                        </td>
+                                        <td>
+                                          <input type="text" class="form-control" name="maHangMuc"
+                                            class="text-center" />
+                                        </td>
+                                        <td>
+                                          <input type="text" class="form-control" name="maHangMuc"
+                                            class="text-center" />
+                                        </td>
+                                        <td>
+                                          <input type="text" class="form-control" name="maHangMuc"
+                                            class="text-center" />
+                                        </td>
+                                        <td class="text-center">
+                                          <a href="javascript:void(0)" class="ibtnDel"><i class="fa fa-trash"
+                                              aria-hidden="true" data-toggle="tooltip" data-placement="bottom"
+                                              title="Xóa"></i></a>&nbsp;
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                    <tfoot>
+                                      <tr>
+                                        <td colspan="9"></td>
+                                        <td colspan="1" style="text-align: center;">
+                                          <!-- <input type="button" class="btn btn-lg btn-block "
+                                              id="addrowKhoiLuongThucHien" value="Thêm mới" /> -->
+                                          <button type="button" class="btn btn-primary" id="addrowKhoiLuongThucHien"><i
+                                              class="fa fa-plus" aria-hidden="true"></i></button>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                      </tr>
+                                    </tfoot>
+                                  </table>
+                                </div>
+                              </div>
+                              <!-- end khoi luong thuc hien -->
+                              <!-- giai ngan von -->
+                              <div class="tab-pane fade" id="giai-ngan-von" role="tabpanel"
+                                aria-labelledby="contact-tab">
+                                <div class="table-responsive">
+                                  <table class="table table-bordered order-list-giai-ngan-von">
+                                    <thead>
+                                      <tr>
+                                        <th class="center-row-table" rowspan="2">Năm</th>
+                                        <th class="center-row-table" rowspan="2">Tháng</th>
+                                        <th class="center-row-table" colspan="2">Vốn trong nước</th>
+                                        <th class="center-row-table" colspan="2">Vốn nước ngoài</th>
+                                        <th class="center-row-table" rowspan="2">Tổng số</th>
+                                        <th class="center-row-table" rowspan="2">Số QĐ</th>
+                                        <th class="center-row-table" rowspan="2">Ngày QĐ</th>
+                                        <th class="center-row-table" rowspan="2">Ghi chú</th>
+                                        <th class="center-row-table" rowspan="2">Hành động</th>
+                                      </tr>
+                                      <tr>
+                                        <th class="center-row-table">Ngân sách</th>
+                                        <th class="center-row-table">Khác</th>
+                                        <th class="center-row-table">ODA</th>
+                                        <th class="center-row-table">Khác</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <td><input type="number" placeholder="Số năm" class="form-control date" name="nam"
+                                          class="text-center" />
+                                      </td>
+                                      <td><input type="number" placeholder="Tháng" min="1" max="12" name="thang"
+                                          class="text-center form-control w-auto" /></td>
+                                      <td><input type="text" class="form-control"></td>
+                                      <td><input type="text" class="form-control"></td>
+                                      <td><input type="text" class="form-control"></td>
+                                      <td><input type="text" class="form-control"></td>
+                                      <td><input type="text" class="form-control"></td>
+                                      <td><input type="text" class="form-control"></td>
+                                      <td><input type="date" class="form-control"></td>
+                                      <td><input type="text" class="form-control w-auto "></td>
+                                      <td class="text-center">
+                                        <a href="javascript:void(0)" class="ibtnDel"><i class="fa fa-trash"
+                                            aria-hidden="true" data-toggle="tooltip" data-placement="bottom"
+                                            title="Xóa"></i></a>&nbsp;
+                                      </td>
+                                    </tbody>
+                                    <tfoot>
+                                      <tr>
+                                        <td colspan="10" style="text-align: left;">
+
+                                        </td>
+                                        <td colspan="1" style="text-align: left;">
+                                          <button type="button" class="btn btn-primary" id="addrowGiaiNganVon"><i
+                                              class="fa fa-plus" aria-hidden="true"></i></button>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                      </tr>
+                                    </tfoot>
+                                  </table>
+                                </div>
+                              </div>
+                              <!-- khoi luong thuc hien thuc te -->
+                              <div class="tab-pane fade" id="khoi-luong-thuc-te" role="tabpanel"
+                                aria-labelledby="contact-tab">
+                                <div class="table-responsive">
+                                  <div class="table-responsive">
+                                    <table class="table table-bordered order-list-khoi-luong-thuc-hien-thuc-te">
+                                      <thead>
+                                        <tr>
+                                          <th rowspan="3" class="center-row-table">Năm</th>
+                                          <th rowspan="3" class="center-row-table">Tháng</th>
+                                          <th rowspan="3" class="center-row-table">Mã hạng mục</th>
+                                          <th rowspan="3" class="center-row-table">Tên hạng mục</th>
+                                          <th rowspan="3" class="center-row-table">Khối lượng thực hiện</th>
+                                          <th rowspan="3" class="center-row-table">Thời điểm kết thúc</th>
+                                          <th rowspan="3" class="center-row-table">Trạng thái</th>
+                                          <th colspan="4" class="text-center">
+                                            Số lượng lao động thực tế
+                                          </th>
+                                          <th rowspan="3" class="center-row-table">Hành động</th>
+                                        </tr>
+                                        <tr>
+
+                                          <th colspan="2">Lao động trong nước</th>
+                                          <th colspan="2">Lao động nước ngoài</th>
+                                        </tr>
+                                        <tr>
+
+                                          <th>Nam</th>
+                                          <th>Nữ</th>
+                                          <th>Nam</th>
+                                          <th>Nữ</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td>
+                                            <input type="number" placeholder="Năm" class="form-control" name="nam"
+                                              class="text-center form-control" />
+                                          </td>
+                                          <td>
+                                            <input type="number" placeholder="Tháng" min="1" max="12" name="thang"
+                                              class="text-center form-control w-auto" />
+                                          </td>
+                                          <td><input type="text" class="form-control"></td>
+                                          <td><input type="text" class="form-control"></td>
+                                          <td><input type="text" class="form-control"></td>
+                                          <td><input type="date" class="form-control w-auto"></td>
+                                          <td>
+                                            <select id="inputState" class="form-control w-auto">
+                                              <option selected>Chậm tiến độ</option>
+                                              <option>Đúng tiến độ</option>
+                                            </select>
+                                          </td>
+                                          <td><input type="text" class="form-control"></td>
+                                          <td><input type="text" class="form-control"></td>
+                                          <td><input type="text" class="form-control"></td>
+                                          <td><input type="text" class="form-control"></td>
+                                          <td class="text-center">
+                                            <a href="javascript:void(0)" class="ibtnDel"><i class="fa fa-trash"
+                                                aria-hidden="true" data-toggle="tooltip" data-placement="bottom"
+                                                title="Xóa"></i></a>&nbsp;
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                      <tfoot>
+                                        <tr>
+                                          <td colspan="11" style="text-align: left;">
+
+                                          </td>
+                                          <td colspan="1" style="text-align: left;">
+                                            <button type="button" class="btn btn-primary"
+                                              id="addrowKhoiLuongThucHienThucTe"><i class="fa fa-plus"
+                                                aria-hidden="true"></i></button>
+                                          </td>
+
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                      </tfoot>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- end khoi luong thuc te -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary btnModalFooter">Lưu Lại</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end modal them moi phan ky du an -->
+              <div class="border">
+                <div class="table-responsive">
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="center-row-table">STT</th>
+                        <th scope="col" class="center-row-table">Mã dự án</th>
+                        <th scope="col" class="center-row-table">Tiêu đề</th>
+                        <th scope="col" class="center-row-table">Hành động</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>MDA001</td>
+                        <td>Trung tâm Hành chính tỉnh Hà Tĩnh</td>
+                        <td class="center-row-table">
+                          <a href="" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-eye"
+                              aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Xem"></i></a>
+                          <a href="javascript:void(0)"><i class="fa fa-pencil-square-o" data-toggle="modal"
+                              data-target="#chinh-sua-phan-ky-thuc-hien" aria-hidden="true" data-toggle="tooltip"
+                              data-placement="bottom" title="Cập nhật"></i></a>
+                          <a href="javascript:void(0)" data-record-id="23" data-record-title="The first one"
+                            data-toggle="modal" data-target="#confirm-delete">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>MDA002</td>
+                        <td> Trung tâm Y tế huyện Kỳ Anh</td>
+                        <td class="center-row-table">
+                          <a href="" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-eye"
+                              aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Xem"></i></a>
+                          <a href="javascript:void(0)"><i class="fa fa-pencil-square-o" data-toggle="modal"
+                              data-target="#chinh-sua-phan-ky-thuc-hien" aria-hidden="true" data-toggle="tooltip"
+                              data-placement="bottom" title="Cập nhật"></i></a>
+                          <a href="javascript:void(0)" data-record-id="23" data-record-title="The first one"
+                            data-toggle="modal" data-target="#confirm-delete">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>MDA003</td>
+                        <td>Xây dựng hạ tầng CCN Cổng Khánh 1</td>
+                        <td class="center-row-table">
+                          <a href="" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-eye"
+                              aria-hidden="true" data-toggle="tooltip" data-placement="bottom" title="Xem"></i></a>
+                          <a href="javascript:void(0)"><i class="fa fa-pencil-square-o" data-toggle="modal"
+                              data-target="#chinh-sua-phan-ky-thuc-hien" aria-hidden="true" data-toggle="tooltip"
+                              data-placement="bottom" title="Cập nhật"></i></a>
+                          <a href="javascript:void(0)" data-record-id="23" data-record-title="The first one"
+                            data-toggle="modal" data-target="#confirm-delete">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+
+                  </table>
+                  <!-- Modal Chinh sua phan ky du an -->
+                  <div class="modal fade" id="chinh-sua-phan-ky-thuc-hien" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">
+                            Chỉnh sửa dự án - <span>Dự án 001</span>
+                          </h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="tab-pane fade active show" id="pills-phan-ky-thuc-hien" role="tabpanel"
+                            aria-labelledby="pills-contact-tab">
+                            <ul class="nav nav-tabs mb-5" id="myTab" role="tablist">
+                              <li class="nav-item">
+                                <a class="nav-link active" id="home-tab" data-toggle="tab"
+                                  href="#chi-tiet-ke-hoach-bo-tri-von" role="tab" aria-controls="home"
+                                  aria-selected="true">Kế hoạch bố trí vốn</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="profile-tab" data-toggle="tab"
+                                  href="#chi-tiet-khoi-luong-thuc-hien" role="tab" aria-controls="profile"
+                                  aria-selected="false">Khối lượng thực hiện</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#chi-tiet-giai-ngan-von"
+                                  role="tab" aria-controls="contact" aria-selected="false">Giải ngân vốn</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" id="contact-tab" data-toggle="tab"
+                                  href="#chi-tiet-khoi-luong-thuc-te" role="tab" aria-controls="contact"
+                                  aria-selected="false">Khối lượng thực hiện thực
+                                  tế</a>
+                              </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                              <!-- ke hoach bo tri von -->
+                              <div class="tab-pane fade show active" id="chi-tiet-ke-hoach-bo-tri-von" role="tabpanel"
+                                aria-labelledby="home-tab">
+                                <div class="table-responsive">
+                                  <table class="table table-bordered mb-5">
+                                    <thead>
+                                      <tr>
+                                        <th rowspan="2" class="center-row-table">Năm</th>
+                                        <th rowspan="2" class="center-row-table">Tháng</th>
+                                        <th colspan="2" class="text-center">Vốn trong nước</th>
+                                        <th colspan="2" class="text-center">Vốn nước ngoài</th>
+                                        <th rowspan="2" class="center-row-table">Tổng số</th>
+                                        <th rowspan="2" class="center-row-table">Số QĐ</th>
+                                        <th rowspan="2" class="center-row-table">Ngày QĐ</th>
+                                        <th rowspan="2" class="center-row-table">Ghi chú</th>
+
+                                      </tr>
+                                      <tr>
+                                        <th>Ngân sách</th>
+                                        <th>Khác</th>
+                                        <th>ODA</th>
+                                        <th>Khác</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+
+                                      <tr>
+                                        <td><input type="text" class="form-control" name="" id="" value="2019"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="9"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="QĐS100"></td>
+                                        <td><input type="date" class="form-control" name="" id=""></td>
+                                        <td><textarea name="" id="" rows="5">Đang hoàn thành đúng chỉ tiêu</textarea>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td><input type="text" class="form-control" name="" id="" value="2019"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="9"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="QĐS100"></td>
+                                        <td><input type="date" class="form-control" name="" id=""></td>
+                                        <td><textarea name="" id="" rows="5">Đang hoàn thành đúng chỉ tiêu</textarea>
+                                        </td>
+
+                                      </tr>
+                                      <tr>
+                                        <td><input type="text" class="form-control" name="" id="" value="2019"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="9"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="QĐS100"></td>
+                                        <td><input type="date" class="form-control" name="" id=""></td>
+                                        <td><textarea name="" id="" rows="5">Đang hoàn thành đúng chỉ tiêu</textarea>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td><input type="text" class="form-control" name="" id="" value="2019"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="9"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="QĐS100"></td>
+                                        <td><input type="date" class="form-control" name="" id=""></td>
+                                        <td><textarea name="" id="" rows="5">Đang hoàn thành đúng chỉ tiêu</textarea>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  <div class="form-group">
+                                    <div class=" m-auto">
+                                      <nav aria-label="Page navigation example">
+                                        <ul class="pagination">
+                                          <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                              <span aria-hidden="true">&laquo;</span>
+                                              <span class="sr-only">Previous</span>
+                                            </a>
+                                          </li>
+                                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                          <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                              <span aria-hidden="true">&raquo;</span>
+                                              <span class="sr-only">Next</span>
+                                            </a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- end ke hoach bo tri von -->
+                              <!-- khoi luong thuc hien -->
+                              <div class="tab-pane fade" id="chi-tiet-khoi-luong-thuc-hien" role="tabpanel"
+                                aria-labelledby="profile-tab">
+                                <div class="table-responsive">
+                                  <table class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th rowspan="3" class="center-row-table">Năm</th>
+                                        <th rowspan="3" class="center-row-table">Tháng</th>
+                                        <th rowspan="3" class="center-row-table">Mã hạng mục</th>
+                                        <th rowspan="3" class="center-row-table">Tên hạng mục</th>
+                                        <th rowspan="3" class="center-row-table">
+                                          Khối lượng dự kiến thực hiện
+                                        </th>
+                                        <th colspan="4" class="center-row-table">
+                                          Số lượng lao động dự kiến
+                                        </th>
+                                      </tr>
+                                      <tr>
+                                        <th colspan="2" class="center-row-table">Lao động trong nước</th>
+                                        <th colspan="2" class="center-row-table">Lao động nước ngoài</th>
+
+                                      </tr>
+                                      <tr>
+                                        <th>Nam</th>
+                                        <th>Nữ</th>
+                                        <th>Nam</th>
+                                        <th>Nữ</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td><input type="text" class="form-control" name="" id="" value="2019"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="6"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <td><input type="text" class="form-control" name="" id="" value="2019"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="6"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <td><input type="text" class="form-control" name="" id="" value="2019"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="6"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  <div class="form-group">
+                                    <div class=" m-auto">
+                                      <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center">
+                                          <li class="page-item disabled">
+                                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                          </li>
+                                          <li class="page-item">
+                                            <a class="page-link" href="#">1</a>
+                                          </li>
+                                          <li class="page-item">
+                                            <a class="page-link" href="#">2</a>
+                                          </li>
+                                          <li class="page-item">
+                                            <a class="page-link" href="#">3</a>
+                                          </li>
+                                          <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- end khoi luong thuc hien -->
+                              <!-- giai ngan von -->
+                              <div class="tab-pane fade" id="chi-tiet-giai-ngan-von" role="tabpanel"
+                                aria-labelledby="contact-tab">
+                                <div class="table-responsive">
+                                  <table class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th rowspan="2" class="center-row-table">Năm</th>
+                                        <th rowspan="2" class="center-row-table">Tháng</th>
+                                        <th colspan="2" class="center-row-table">Vốn trong nước</th>
+                                        <th colspan="2" class="center-row-table">Vốn nước ngoài</th>
+                                        <th rowspan="2" class="center-row-table">Tổng số</th>
+                                        <th rowspan="2" class="center-row-table">Số QĐ</th>
+                                        <th rowspan="2" class="center-row-table">Ngày QĐ</th>
+                                        <th rowspan="2" class="center-row-table">Ghi chú</th>
+                                      </tr>
+                                      <tr>
+                                        <th>Ngân sách</th>
+                                        <th>Khác</th>
+                                        <th>ODA</th>
+                                        <th>Khác</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+
+                                      <tr>
+                                        <td><input type="text" class="form-control" name="" id="" value="2019"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="9"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="QĐS100"></td>
+                                        <td><input type="date" class="form-control" name="" id=""></td>
+                                        <td><textarea name="" id="" rows="5">Đang hoàn thành đúng chỉ tiêu</textarea>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td><input type="text" class="form-control" name="" id="" value="2019"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="9"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="QĐS100"></td>
+                                        <td><input type="date" class="form-control" name="" id=""></td>
+                                        <td><textarea name="" id="" rows="5">Đang hoàn thành đúng chỉ tiêu</textarea>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td><input type="text" class="form-control" name="" id="" value="2019"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="9"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="10000$"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="QĐS100"></td>
+                                        <td><input type="date" class="form-control" name="" id=""></td>
+                                        <td><textarea name="" id="" rows="5">Đang hoàn thành đúng chỉ tiêu</textarea>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  <div class="form-group">
+                                    <div class=" m-auto">
+                                      <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center">
+                                          <li class="page-item disabled">
+                                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                          </li>
+                                          <li class="page-item">
+                                            <a class="page-link" href="#">1</a>
+                                          </li>
+                                          <li class="page-item">
+                                            <a class="page-link" href="#">2</a>
+                                          </li>
+                                          <li class="page-item">
+                                            <a class="page-link" href="#">3</a>
+                                          </li>
+                                          <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- end giai ngan von -->
+                              <!-- khoi luong thuc hien thuc te -->
+                              <div class="tab-pane fade" id="chi-tiet-khoi-luong-thuc-te" role="tabpanel"
+                                aria-labelledby="contact-tab">
+                                <div class="table-responsive">
+                                  <table class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th rowspan="3" class="center-row-table">Năm</th>
+                                        <th rowspan="3" class="center-row-table">Tháng</th>
+                                        <th rowspan="3" class="center-row-table">Mã hạng mục</th>
+                                        <th rowspan="3" class="center-row-table">Tên hạng mục</th>
+                                        <th rowspan="3" class="center-row-table">Khối lượng thực hiện</th>
+                                        <th rowspan="3" class="center-row-table">Thời điểm kết thúc</th>
+                                        <th rowspan="3" class="center-row-table">Trạng thái</th>
+                                        <th colspan="4" class="center-row-table">
+                                          Số lượng lao động thực tế
+                                        </th>
+                                      </tr>
+                                      <tr>
+                                        <th colspan="2" class="center-row-table">Lao động trong nước</th>
+                                        <th colspan="2" class="center-row-table">Lao động nước ngoài</th>
+                                      </tr>
+                                      <tr>
+                                        <th>Nam</th>
+                                        <th>Nữ</th>
+                                        <th>Nam</th>
+                                        <th>Nữ</th>
+
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+
+                                      <tr>
+                                        <td><input type="text" class="form-control" name="" id="" value="2019"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="2"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                          <div class="form-group">
+                                            <select id="inputState" class="form-control">
+                                              <option selected>Đúng tiến độ</option>
+                                              <option>Chậm tiến độ</option>
+                                            </select>
+                                          </div>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+
+                                      </tr>
+                                      <tr>
+                                        <td><input type="text" class="form-control" name="" id="" value="2019"></td>
+                                        <td><input type="text" class="form-control" name="" id="" value="2"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                          <div class="form-group">
+                                            <select id="inputState" class="form-control">
+                                              <option selected>Đúng tiến độ</option>
+                                              <option>Chậm tiến độ</option>
+                                            </select>
+                                          </div>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  <!-- modal xem chi tiet nguyen nhan cham tien do -->
+                                  <div class="modal fade" id="xem-chi-tiet-nguyen-nhan-cham-tien-do" tabindex="-1"
+                                    role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document" style="min-width: 50% !important;">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel">Nguyên nhân chậm tiến độ</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <h6 class="h3 text-dark">Chọn nguyên nhân</h6>
+                                          <div class="row">
+                                            <div class="col-sm-6">
+                                              <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="nguyenNhanA">
+                                                <label class="form-check-label" for="nguyenNhanA">Nguyên nhân A</label>
+                                              </div>
+                                              <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="nguyenNhanB">
+                                                <label class="form-check-label" for="nguyenNhanB">Nguyên nhân B</label>
+                                              </div>
+                                              <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="nguyenNhanC">
+                                                <label class="form-check-label" for="nguyenNhanC">Nguyên nhân C</label>
+                                              </div>
+                                              <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="nguyenNhanD">
+                                                <label class="form-check-label" for="nguyenNhanD">Nguyên nhân D</label>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-12">
+                                              <div class="form-group">
+                                                <label for="exampleFormControlTextarea1" class="h3 text-dark">Nguyên
+                                                  nhân
+                                                  khác</label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                  rows="3"></textarea>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Đóng</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <!-- end modal xem chi tiet nguyen nhan cham tien do -->
+                                  <div class="form-group">
+                                    <div class=" m-auto">
+                                      <nav aria-label="Page navigation example">
+                                        <ul class="pagination justify-content-center">
+                                          <li class="page-item disabled">
+                                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                          </li>
+                                          <li class="page-item">
+                                            <a class="page-link" href="#">1</a>
+                                          </li>
+                                          <li class="page-item">
+                                            <a class="page-link" href="#">2</a>
+                                          </li>
+                                          <li class="page-item">
+                                            <a class="page-link" href="#">3</a>
+                                          </li>
+                                          <li class="page-item">
+                                            <a class="page-link" href="#">Next</a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- end khoi luong thuc te -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Thoát
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end modal chinh sua phan ky du an  -->
+                </div>
+
+                <!-- Modal Xem chi tiết dự án -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                  aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          Xem chi tiết dự án - <span>Dự án 001</span>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div class="tab-pane fade active show" id="pills-phan-ky-thuc-hien" role="tabpanel"
+                          aria-labelledby="pills-contact-tab">
+                          <ul class="nav nav-tabs mb-5" id="myTab" role="tablist">
+                            <li class="nav-item">
+                              <a class="nav-link active" id="home-tab" data-toggle="tab"
+                                href="#chi-tiet-ke-hoach-bo-tri-von" role="tab" aria-controls="home"
+                                aria-selected="true">Kế hoạch bố trí vốn</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="profile-tab" data-toggle="tab"
+                                href="#chi-tiet-khoi-luong-thuc-hien" role="tab" aria-controls="profile"
+                                aria-selected="false">Khối lượng thực hiện</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#chi-tiet-giai-ngan-von"
+                                role="tab" aria-controls="contact" aria-selected="false">Giải ngân vốn</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" id="contact-tab" data-toggle="tab" href="#chi-tiet-khoi-luong-thuc-te"
+                                role="tab" aria-controls="contact" aria-selected="false">Khối lượng thực hiện thực
+                                tế</a>
+                            </li>
+                          </ul>
+                          <div class="tab-content" id="myTabContent">
+                            <!-- ke hoach bo tri von -->
+                            <div class="tab-pane fade show active" id="chi-tiet-ke-hoach-bo-tri-von" role="tabpanel"
+                              aria-labelledby="home-tab">
+                              <div class="table-responsive">
+                                <table class="table table-bordered mb-5">
+                                  <thead>
+                                    <tr>
+                                      <th rowspan="2" class="center-row-table">Năm</th>
+                                      <th rowspan="2" class="center-row-table">Tháng</th>
+                                      <th colspan="2" class="text-center">Vốn trong nước</th>
+                                      <th colspan="2" class="text-center">Vốn nước ngoài</th>
+                                      <th rowspan="2" class="center-row-table">Tổng số</th>
+                                      <th rowspan="2" class="center-row-table">Số QĐ</th>
+                                      <th rowspan="2" class="center-row-table">Ngày QĐ</th>
+                                      <th rowspan="2" class="center-row-table">Ghi chú</th>
+
+                                    </tr>
+                                    <tr>
+                                      <th>Ngân sách</th>
+                                      <th>Khác</th>
+                                      <th>ODA</th>
+                                      <th>Khác</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+
+                                    <tr>
+                                      <td>2018</td>
+                                      <td>9</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>QĐS100</td>
+                                      <td>1/1/2019</td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>2018</td>
+                                      <td>9</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>QĐS100</td>
+                                      <td>1/1/2019</td>
+                                      <td></td>
+
+                                    </tr>
+                                    <tr>
+                                      <td>2018</td>
+                                      <td>9</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>QĐS100</td>
+                                      <td>1/1/2019</td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>2018</td>
+                                      <td>9</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>QĐS100</td>
+                                      <td>1/1/2019</td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <div class="form-group">
+                                  <div class=" m-auto">
+                                    <nav aria-label="Page navigation example">
+                                      <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled">
+                                          <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                        </li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#">1</a>
+                                        </li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#">2</a>
+                                        </li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#">3</a>
+                                        </li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#">Next</a>
+                                        </li>
+                                      </ul>
+                                    </nav>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end ke hoach bo tri von -->
+                            <!-- khoi luong thuc hien -->
+                            <div class="tab-pane fade" id="chi-tiet-khoi-luong-thuc-hien" role="tabpanel"
+                              aria-labelledby="profile-tab">
+                              <div class="table-responsive">
+                                <table class="table table-bordered">
+                                  <thead>
+                                    <tr>
+                                      <th rowspan="3" class="center-row-table">Năm</th>
+                                      <th rowspan="3" class="center-row-table">Tháng</th>
+                                      <th rowspan="3" class="center-row-table">Mã hạng mục</th>
+                                      <th rowspan="3" class="center-row-table">Tên hạng mục</th>
+                                      <th rowspan="3" class="center-row-table">
+                                        Khối lượng dự kiến thực hiện
+                                      </th>
+                                      <th colspan="4" class="center-row-table">
+                                        Số lượng lao động dự kiến
+                                      </th>
+                                    </tr>
+                                    <tr>
+                                      <th colspan="2" class="center-row-table">Lao động trong nước</th>
+                                      <th colspan="2" class="center-row-table">Lao động nước ngoài</th>
+
+                                    </tr>
+                                    <tr>
+                                      <th>Nam</th>
+                                      <th>Nữ</th>
+                                      <th>Nam</th>
+                                      <th>Nữ</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>2019</td>
+                                      <td>6</td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>2019</td>
+                                      <td>6</td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>2019</td>
+                                      <td>6</td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <div class="form-group">
+                                  <div class=" m-auto">
+                                    <nav aria-label="Page navigation example">
+                                      <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled">
+                                          <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                        </li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#">1</a>
+                                        </li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#">2</a>
+                                        </li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#">3</a>
+                                        </li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#">Next</a>
+                                        </li>
+                                      </ul>
+                                    </nav>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end khoi luong thuc hien -->
+                            <!-- giai ngan von -->
+                            <div class="tab-pane fade" id="chi-tiet-giai-ngan-von" role="tabpanel"
+                              aria-labelledby="contact-tab">
+                              <div class="table-responsive">
+                                <table class="table table-bordered">
+                                  <thead>
+                                    <tr>
+                                      <th rowspan="2" class="center-row-table">Năm</th>
+                                      <th rowspan="2" class="center-row-table">Tháng</th>
+                                      <th colspan="2" class="center-row-table">Vốn trong nước</th>
+                                      <th colspan="2" class="center-row-table">Vốn nước ngoài</th>
+                                      <th rowspan="2" class="center-row-table">Tổng số</th>
+                                      <th rowspan="2" class="center-row-table">Số QĐ</th>
+                                      <th rowspan="2" class="center-row-table">Ngày QĐ</th>
+                                      <th rowspan="2" class="center-row-table">Ghi chú</th>
+                                    </tr>
+                                    <tr>
+                                      <th>Ngân sách</th>
+                                      <th>Khác</th>
+                                      <th>ODA</th>
+                                      <th>Khác</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+
+                                    <tr>
+                                      <td>2019</td>
+                                      <td>8</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>QĐS100</td>
+                                      <td>1/1/2019</td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>2019</td>
+                                      <td>8</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>QĐS100</td>
+                                      <td>1/1/2019</td>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td>2019</td>
+                                      <td>8</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>10000$</td>
+                                      <td>QĐS100</td>
+                                      <td>1/1/2019</td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <div class="form-group">
+                                  <div class=" m-auto">
+                                    <nav aria-label="Page navigation example">
+                                      <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled">
+                                          <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                        </li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#">1</a>
+                                        </li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#">2</a>
+                                        </li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#">3</a>
+                                        </li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#">Next</a>
+                                        </li>
+                                      </ul>
+                                    </nav>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end giai ngan von -->
+                            <!-- khoi luong thuc hien thuc te -->
+                            <div class="tab-pane fade" id="chi-tiet-khoi-luong-thuc-te" role="tabpanel"
+                              aria-labelledby="contact-tab">
+                              <div class="table-responsive">
+                                <table class="table table-bordered">
+                                  <thead>
+                                    <tr>
+                                      <th rowspan="3" class="center-row-table">Năm</th>
+                                      <th rowspan="3" class="center-row-table">Tháng</th>
+                                      <th rowspan="3" class="center-row-table">Mã hạng mục</th>
+                                      <th rowspan="3" class="center-row-table">Tên hạng mục</th>
+                                      <th rowspan="3" class="center-row-table">Khối lượng thực hiện</th>
+                                      <th rowspan="3" class="center-row-table">Thời điểm kết thúc</th>
+                                      <th rowspan="3" class="center-row-table">Trạng thái</th>
+                                      <th colspan="4" class="center-row-table">
+                                        Số lượng lao động thực tế
+                                      </th>
+                                    </tr>
+                                    <tr>
+                                      <th colspan="2" class="center-row-table">Lao động trong nước</th>
+                                      <th colspan="2" class="center-row-table">Lao động nước ngoài</th>
+                                    </tr>
+                                    <tr>
+                                      <th>Nam</th>
+                                      <th>Nữ</th>
+                                      <th>Nam</th>
+                                      <th>Nữ</th>
+
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+
+                                    <tr>
+                                      <td>2018</td>
+                                      <td>0</td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td>
+                                        Đúng tiến độ
+                                      </td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+
+                                    </tr>
+                                    <tr>
+                                      <td>2018</td>
+                                      <td>0</td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td>
+                                        Chậm tiến độ
+                                        <span data-toggle="modal"
+                                          data-target="#xem-chi-tiet-nguyen-nhan-cham-tien-do"><button type="button"
+                                            class="btn"><i class="fa fa-eye" aria-hidden="true"></i></button></span>
+                                      </td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                      <td></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                <!-- modal xem chi tiet nguyen nhan cham tien do -->
+                                <div class="modal fade" id="xem-chi-tiet-nguyen-nhan-cham-tien-do" tabindex="-1"
+                                  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog" role="document" style="min-width: 50% !important;">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Nguyên nhân chậm tiến độ</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <h6 class="h3 text-dark">Chọn nguyên nhân</h6>
+                                        <div class="row">
+                                          <div class="col-sm-6">
+                                            <div class="form-check">
+                                              <input type="checkbox" class="form-check-input" id="nguyenNhanA">
+                                              <label class="form-check-label" for="nguyenNhanA">Nguyên nhân A</label>
+                                            </div>
+                                            <div class="form-check">
+                                              <input type="checkbox" class="form-check-input" id="nguyenNhanB">
+                                              <label class="form-check-label" for="nguyenNhanB">Nguyên nhân B</label>
+                                            </div>
+                                            <div class="form-check">
+                                              <input type="checkbox" class="form-check-input" id="nguyenNhanC">
+                                              <label class="form-check-label" for="nguyenNhanC">Nguyên nhân C</label>
+                                            </div>
+                                            <div class="form-check">
+                                              <input type="checkbox" class="form-check-input" id="nguyenNhanD">
+                                              <label class="form-check-label" for="nguyenNhanD">Nguyên nhân D</label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="row">
+                                          <div class="col-md-12">
+                                            <div class="form-group">
+                                              <label for="exampleFormControlTextarea1" class="h3 text-dark">Nguyên nhân
+                                                khác</label>
+                                              <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                rows="3"></textarea>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                          data-dismiss="modal">Đóng</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- end modal xem chi tiet nguyen nhan cham tien do -->
+                                <div class="form-group">
+                                  <div class=" m-auto">
+                                    <nav aria-label="Page navigation example">
+                                      <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled">
+                                          <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                        </li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#">1</a>
+                                        </li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#">2</a>
+                                        </li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#">3</a>
+                                        </li>
+                                        <li class="page-item">
+                                          <a class="page-link" href="#">Next</a>
+                                        </li>
+                                      </ul>
+                                    </nav>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- end khoi luong thuc te -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                          Thoát
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- end modal xem chi tiết dự án -->
+
+
+
+                <div class="row mb-3 p-3">
+                  <div class="col-md-6 col-12 m-auto"><span class="justify-content-start">Hiển thị từ 1 - 10 trong tổng
+                      số 10000 bản ghi</span></div>
+                  <div class="col-md-6 col-12 m-auto">
+                    <nav aria-label="Page navigation example">
+                      <ul class="pagination justify-content-end">
+                        <li class="page-item disabled">
+                          <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                          <a class="page-link" href="#">Next</a>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- modal comfrim deleted -->
+        <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header bg-danger">
+                <h4 class="modal-title text-white" id="myModalLabel">Xác nhận xóa</h4>
+                <button type="button" class="close text-white" data-dismiss="modal" aria-hidden="true">×</button>
+              </div>
+              <div class="modal-body">
+                <p>Bạn có muốn xóa bản ghi <strong>xxxxxxxxxxxxxxx</strong> này?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy bỏ</button>
+                <button type="button" class="btn btn-danger btn-ok">Xóa</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end modal comfrim deleted -->
+      </main>
+
+    </div>
+  </div>
+
+  <script src="./public/js/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="public/js/vendor.js"></script>
+  <script type="text/javascript" src="public/js/bundle.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+  <script src="public/js/main.js"></script>
+  <script>
+  </script>
+</body>
+
+</html>
